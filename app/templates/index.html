@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<table name="job_table" class="custom_class", border="1">
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Interested?</th>
+    </tr>
+    {% for job in job_query %}
+    <tr>
+       <td>{{ job.id}}</td>
+       <td>{{ job.date}} days</td>
+       <td>{{ job.location}}</td>
+       <td>{{ job.company}}</td>
+        <td><a href={{ job.link }}>{{ job.title}}</a></td>
+        <td>
+            <fieldset>
+                {% if job.interesting %}
+                <input type="checkbox", id="{{ job.id }}", name="interesting", value="interesting" checked>
+                {% else %}
+                <input type="checkbox", name="interesting", value="interesting">
+                {% endif %}
+            </fieldset>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

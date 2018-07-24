@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='beautify.css') }}">
+        <title>Welcome to jobCrawler</title>
+    </head>
+    <body>
+        <div>jobCrawler: <a href="/index">All</a>|<a href="/interested">Interested</a>|<a href="/last24h">Last 24h</a><right><input type="submit" value="Update", style="float: right"></right></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
