@@ -5,6 +5,6 @@ MySQL_config = {
     'user': 'jobCrawler',
     'pw': 'test',
     'db': 'jobCrawler',
-    'echo': False,
+    'echo': True,
     'convert_unicode': True
 }
