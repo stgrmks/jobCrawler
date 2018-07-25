@@ -1,11 +1,11 @@
 # coding: utf-8
 __author__ = 'MSteger'
 
-from db.db import jobs, connect_and_create, select_desc, select_interested_desc, select_last24h
-from db.settings import MySQL_config
+from crawler.db.db import jobs, connect_and_create, select_desc, select_interested_desc, select_last24h
+from crawler.db.settings import MySQL_config
 from flask import Flask, render_template, request
-from crawler.crawler.helpers import timeDiffDays
-from forms import UpdateForm
+from crawler.helpers import timeDiffDays
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -31,7 +31,7 @@ def last24h():
     return render_template('index.html', job_query = job_query)
 
 @app.route('/update', methods = ['POST'])
-def update():
+def update(): #TODO
     if request.method == 'POST': return render_template('index.html')
 
 if __name__== '__main__':
