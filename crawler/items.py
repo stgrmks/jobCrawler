@@ -14,3 +14,4 @@ class jobItem(Item):
     date = Field()
     location = Field()
     interesting = Field()
+    source = Field()

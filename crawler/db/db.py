@@ -15,6 +15,7 @@ class jobs(Base):
     location = Column(String(250))
     link = Column(String(1000))
     interesting = Column(Boolean)
+    source = Column(String(250))
 
 def connect_and_create(host='localhost', port=3306, user='jobCrawler', pw='test', db='jobCrawler', **engine_kwargs):
     engine = create_engine('mysql://{}:{}@{}:{}/{}'.format(user, pw, host, port, db),**engine_kwargs)

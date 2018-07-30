@@ -7,6 +7,7 @@
         <th>Location</th>
         <th>Company</th>
         <th>Title</th>
+        <th>Source</th>
         <th>Interested?</th>
     </tr>
     {% for job in job_query %}
@@ -16,6 +17,7 @@
        <td>{{ job.location}}</td>
        <td>{{ job.company}}</td>
         <td><a href={{ job.link }}>{{ job.title}}</a></td>
+        <td>{{ job.source }}</td>
         <td>
             <fieldset>
                 {% if job.interesting %}
